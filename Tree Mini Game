@@ -12,10 +12,10 @@ function setup() {
 }
 
 function draw() {
-  background(129,169,241);
+  background(129, 169, 241);
 	//set up base trees
-	image(treeSprite, windowWidth/4, windowHeight/2, treeSprite.width * 2, treeSprite.height * 2);
-	image(treeSprite, windowWidth/2, windowHeight/2, treeSprite.width * 2, treeSprite.height * 2);
+	//image(treeSprite, windowWidth/4, windowHeight/2, treeSprite.width * 2, treeSprite.height * 2);
+	//image(treeSprite, windowWidth/2, windowHeight/2, treeSprite.width * 2, treeSprite.height * 2);
 	//equals sign
 	fill(0);
 	rect(windowWidth / 2 + 400, windowHeight/2 + 35, 100, 35);
@@ -26,7 +26,9 @@ function apples(){
 	let appleNum = 0, bananaNum = 0;
 	//Sets random amount of apples and bananas for each tree
 	for(let i = 0; i < 10; i ++){
-		appleNum = int(random(0, 2));
-		bananaNum = int(random(0, 2));
+		appleNum += int(random(0, 2));
+		bananaNum += int(random(0, 2));
 	}
+	
+	let appleX = [10], appleY = [10];
 }
