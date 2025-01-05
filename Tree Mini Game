@@ -1,46 +1,47 @@
 function preload() {
-//treeSprite = loadImage("Tree Sprite.png");
-//appleSprite = loadImage("Apple Sprite.png");
-//banannaSprite = loadImage("Bananna Sprite.png")
+	treeSprite = loadImage("Tree Sprite.png");
+	appleSprite = loadImage("Apple Sprite.png");
+	banannaSprite = loadImage("Bananna Sprite.png");
 }
 
 function setup() {
-createCanvas(windowWidth, windowHeight);
-imageMode(CENTER);
-rectMode(CENTER);
-ellipseMode(CENTER);
-}
-let appleX = [10],
-appleY = [10];
-function apples() {
-let appleNum = 0,
-bananaNum = 0;
-//Sets random amount of apples and bananas for each tree
-for (let i = 0; i < 10; i++) {
-appleNum += int(random(0, 2));
-bananaNum += int(random(0, 2));
+	createCanvas(windowWidth, windowHeight);
+	imageMode(CENTER);
+	rectMode(CENTER);
+	ellipseMode(CENTER);
 }
 
-//let appleX = [10],
-// appleY = [10];
-for (let i=0; i < 10; i++)
-{
-appleX[i] = int(random (1,500));
-appleY[i] = int(random (1,500));
+let appleX = [10], appleY = [10];
+let appleNum = 0, bananaNum = 0;
+
+function apples() {
+	//Sets random amount of apples and bananas for each tree
+	for (let i = 0; i < 10; i++) {
+		appleNum += int(random(0, 2));
+		bananaNum += int(random(0, 2));
+	}
+
+	for (let i = 0; i < 10;  i++) {
+		appleX[i] = int(random(0, width/4));
+		appleY[i] = int(random(height));
+	}
 }
-}
+
+let answerDone = false;
+
 function draw() {
-background(129, 169, 241);
-//set up base trees
-//image(treeSprite, windowWidth/4, windowHeight/2, treeSprite.width * 2, treeSprite.height * 2);
-//image(treeSprite, windowWidth/2, windowHeight/2, treeSprite.width * 2, treeSprite.height * 2);
-//equals sign
-fill(0);
-rect(windowWidth / 2 + 400, windowHeight / 2 + 35, 100, 35);
-for (let i = 0; i<10; i++)
-{
- appleX[i] = int(random (1,500));
-appleY[i] = int(random (1,500));
-rect(windowWidth / 2 + 400, windowHeight / 2 - 35, appleX[i], appleY[i]);
-}
+	background(129, 169, 241);
+	//set up base trees
+	//image(treeSprite, windowWidth/4, windowHeight/2, treeSprite.width * 2, treeSprite.height * 2);
+	//image(treeSprite, windowWidth/2, windowHeight/2, treeSprite.width * 2, treeSprite.height * 2);
+	//equals sign
+	fill(0);
+	if(answerDone == false){
+		apples();
+		answerDone = true;
+	}
+	rect(windowWidth / 2 + 400, windowHeight / 2 + 35, 100, 35);
+	for (let i = 0; i < appleNum; i++) {
+		rect(appleX[i], appleY[i], 50, 50);
+	}
 }
