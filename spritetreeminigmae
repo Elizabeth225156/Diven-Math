@@ -1,17 +1,15 @@
 function preload(){
-  img1 =loadImage("treecompsci-removebg-preview")
-  img2 =loadImage("applecompsci-removebg-preview")
+  treeSprite = loadImage("Tree Sprite.png");
+  appleSprite = loadImage("Apple Sprite.png");
+	banannaSprite = loadImage("Bananna Sprite.png")
 }
 
-
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
   background(220);
-image(img1,0,0,400,200);
-image(img2,0,200,400,200);
- 
- 
+	image(treeSprite, 0, 0);
+	image(appleSprite, 0, 200);
 }
