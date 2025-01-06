@@ -65,3 +65,7 @@ function banannas() {
 }
 
 answerDone = false;
+
+let total = bananaNum + appleNum;
+let converted = str(total);
+textAlign();
