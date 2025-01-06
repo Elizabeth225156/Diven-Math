@@ -1,7 +1,7 @@
 function preload() {
-	treeSprite = loadImage("Tree Sprite.png");
-	appleSprite = loadImage("Apple Sprite.png");
-	banannaSprite = loadImage("Bananna Sprite.png");
+	//treeSprite = loadImage("Tree Sprite.png");
+	//appleSprite = loadImage("Apple Sprite.png");
+	//banannaSprite = loadImage("Bananna Sprite.png");
 }
 
 function setup() {
