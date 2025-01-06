@@ -1,7 +1,7 @@
 function preload() {
-	//treeSprite = loadImage("Tree Sprite.png");
-	//appleSprite = loadImage("Apple Sprite.png");
-	//banannaSprite = loadImage("Bananna Sprite.png");
+	treeSprite = loadImage("Tree Sprite.png");
+	appleSprite = loadImage("Apple Sprite.png");
+	banannaSprite = loadImage("Bananna Sprite.png");
 }
 
 function setup() {
@@ -21,9 +21,9 @@ function apples() {
 		bananaNum += int(random(0, 2));
 	}
 
-	for (let i = 0; i < 10;  i++) {
-		appleX[i] = int(random(0, width/4));
-		appleY[i] = int(random(height));
+	for (let i = 0; i < appleNum;  i++) {
+		appleX[i] = int(random(width/4 - 75, width/3));
+		appleY[i] = int(random(height/4 + 40, height/2));
 	}
 }
 
@@ -32,16 +32,16 @@ let answerDone = false;
 function draw() {
 	background(129, 169, 241);
 	//set up base trees
-	//image(treeSprite, windowWidth/4, windowHeight/2, treeSprite.width * 2, treeSprite.height * 2);
-	//image(treeSprite, windowWidth/2, windowHeight/2, treeSprite.width * 2, treeSprite.height * 2);
+	image(treeSprite, windowWidth/4, windowHeight/2, treeSprite.width * 2, treeSprite.height * 2);
+	image(treeSprite, windowWidth/2, windowHeight/2, treeSprite.width * 2, treeSprite.height * 2);
 	//equals sign
 	fill(0);
 	if(answerDone == false){
 		apples();
 		answerDone = true;
 	}
-	rect(windowWidth / 2 + 400, windowHeight / 2 + 35, 100, 35);
+	//image(appleSprite, windowWidth / 2 + 400, windowHeight / 2 + 35, 100, 35);
 	for (let i = 0; i < appleNum; i++) {
-		rect(appleX[i], appleY[i], 50, 50);
+		image(appleSprite, appleX[i], appleY[i], 50, 50);
 	}
 }
