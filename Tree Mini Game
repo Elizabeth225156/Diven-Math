@@ -39,12 +39,33 @@ fill(0);
 
 let total = bananaNum + appleNum;
 let converted = str(total);
-if (total.tostring==converted.tostring)
-{
+if (total.tostring==converted.tostring){
 console.log("peak teamwork guys");
 }
 if(AppleRegen == false){
 apples();
 banannas();
 AppleRegen = true;
+}
+//image(appleSprite, windowWidth / 2 + 400, windowHeight / 2 + 35, 100, 35);
+for (let i = 0; i < appleNum; i++) {
+image(appleSprite, appleX[i], appleY[i], 50, 50);
+
+for (let i = 0; i < bananaNum; i++)
+image(banannaSprite, bananaX[i], bananaY[i], 50, 50)
+}
+}
+
+let bananaX = [10], bananaY = [10];
+
+function banannas() {
+//Sets random amount of apples and bananas for each tree
+for (let i = 0; i < 10; i++) {
+bananaNum += int(random(0, 2));
+for (let i = 0; i < appleNum;  i++) {
+bananaX[i] = int(random(width/4 + 575, width/2));
+bananaY[i] = int(random(height/4 + 40, height/2));
+}
+}
+}
 
