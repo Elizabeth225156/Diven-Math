@@ -56,7 +56,7 @@ function draw() {
 		image(banannaSprite, bananaX[i], bananaY[i], 50, 50);
 	}
 }
-
+}
 
 
 function banannas() {
