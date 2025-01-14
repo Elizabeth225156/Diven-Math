@@ -1,0 +1,9 @@
+#title {
+  background-color: #bce3eb;
+  border: 5px solid #022f78;
+  padding: 100px;
+  color: #5693e3;
+  text-align: center;
+  font-family: "Sora", cursive, Times;
+  font-size: 75px;
+}
