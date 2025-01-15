@@ -6,7 +6,7 @@ function preload() {
 }
 
 function setup() {
-	createCanvas(800, 800);
+	createCanvas(1200, 500);
 	imageMode(CENTER);
 	rectMode(CENTER);
 	ellipseMode(CENTER);
@@ -64,14 +64,26 @@ function draw() {
 //}
 }
 
+class apple {
+  constructor(x, y){
+    this.x = x;
+    this.y = y;
+  }
+  
+  show(){
+    fill(255, 0, 0);
+    ellipse(this.x, this.y, 50, 50);
+  }
+}
 
-function banannas() {
-	 //Sets random amount of apples and bananas for each tree
-	// for (let i = 0; i < 10; i++) {
-	// 	bananaNum += int(random(0, 2));
-	// 	for (let i = 0; i < appleNum; i++) {
-	// 		bananaX[i] = int(random(width/4 + 575, width/2));
-	// 		bananaY[i] = int(random(height/4 + 40, height/2));
-	// 	}
-	// }
+class banana {
+  constructor(x, y){
+    this.x = x;
+    this.y = y;
+  }
+  
+  show(){
+    fill('yellow');
+    ellipse(this.x, this.y, 50, 50);
+  }
 }
