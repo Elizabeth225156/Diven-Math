@@ -58,7 +58,6 @@ function draw() {
 }
 }
 
-
 function banannas() {
 	//Sets random amount of apples and bananas for each tree
 	for (let i = 0; i < 10; i++) {
