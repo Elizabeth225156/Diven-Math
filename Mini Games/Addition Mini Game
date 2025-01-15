@@ -1,4 +1,3 @@
-
 function preload() {
 	// treeSprite = loadImage("Tree Sprite.png");
 	// appleSprite = loadImage("Apple Sprite.png");
@@ -12,29 +11,13 @@ function setup() {
 	ellipseMode(CENTER);
 }
 
-let appleX = [10], appleY = [10];
-let appleNum = 0, bananaNum = 0;
-
-function apples() {
-	//Sets random amount of apples and bananas for each tree
-	for (let i = 0; i < 10; i++) {
-		appleNum += int(random(0, 2));
-		bananaNum += int(random(0, 2));
-	}
-
-	// for (let i = 0; i < appleNum;  i++) {
-	// 	appleX[i] = int(random(width/4 - 75, width/3));
-	// 	appleY[i] = int(random(height/4 + 40, height/2));
-	// }
-}
-
-let AppleRegen = false;
-let bananaX = [10], bananaY = [10];
+let apples = [10];
+let appleRegen = false;
 
 function draw() {
 	background(129, 169, 241);
 	//set up base trees
-  fill('green');
+    fill('green');
 	rect(100, 400, 175, 225);
 	rect(400, 400, 175, 225);
 	//equals sign
@@ -42,37 +25,41 @@ function draw() {
     rect(600, 450, 100, 30);
     rect(600, 400, 100, 30);
 
-	let total = bananaNum + appleNum;
-	let converted = str(total);
-	if (total.tostring==converted.tostring){
-		//console.log("peak teamwork guys");
+	// if (total.tostring==converted.tostring){
+	// 	//console.log("peak teamwork guys");
+	// }
+	if(appleRegen == false){
+        for(let i = 0; i < 10; i ++){
+          if(apples[i].findShow() == 'y'){
+            apples[i].show();
+          }
+        }
+		appleRegen = true;
 	}
-	if(AppleRegen == false){
-		// apples();
-		// banannas();
-		AppleRegen = true;
-	}
-	//image(appleSprite, windowWidth / 2 + 400, windowHeight / 2 + 35, 100, 35);
-// 	for (let i = 0; i < appleNum; i++) {
-//       fill('red');
-// 		rect(appleX[i], appleY[i], 50, 50);
-
-// 		for (let i = 0; i < bananaNum; i++){
-//           fill('yellow');
-// 		rect(bananaX[i], bananaY[i], 50, 50);
-// 	}
-//}
 }
 
 class apple {
-  constructor(x, y){
+  constructor(x, y, show){
     this.x = x;
     this.y = y;
+    this.show = 'f';
   }
   
   show(){
     fill(255, 0, 0);
     ellipse(this.x, this.y, 50, 50);
+  }
+  
+  setShow(yn){
+    if(yn == 'y'){
+      this.show = 'y';
+    } else{
+      this.show = 'n';
+    }
+  }
+  
+  findShow(){
+    return this.show;
   }
 }
 
