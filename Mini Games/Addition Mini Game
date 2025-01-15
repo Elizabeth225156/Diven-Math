@@ -28,24 +28,34 @@ function draw() {
 	// if (total.tostring==converted.tostring){
 	// 	//console.log("peak teamwork guys");
 	// }
-	if(appleRegen == false){
-        for(let i = 0; i < 10; i ++){
-          if(apples[i].findShow() == 'y'){
-            apples[i].show();
-          }
-        }
+  
+    apples[0] = new Apple(50, 350, 'y');
+    apples[1] = new Apple(60, 400, 'y');
+    apples[2] = new Apple(70, 330, 'y');
+    apples[3] = new Apple(80, 414, 'y');
+    apples[4] = new Apple(90, 440, 'y');
+    apples[5] = new Apple(100, 380, 'y');
+    apples[6] = new Apple(110, 410, 'y');
+    apples[7] = new Apple(120, 330, 'y');
+    apples[8] = new Apple(130, 450, 'y');
+    apples[9] = new Apple(140, 390, 'y');
+  
+     for(let i = 0; i < 10; i ++){
+      if(apples[i].findShow() == 'y'){
+        apples[i].showApple();
+      }
 		appleRegen = true;
 	}
 }
 
-class apple {
+class Apple {
   constructor(x, y, show){
     this.x = x;
     this.y = y;
-    this.show = 'f';
+    this.show = show;
   }
   
-  show(){
+  showApple(){
     fill(255, 0, 0);
     ellipse(this.x, this.y, 50, 50);
   }
@@ -63,13 +73,13 @@ class apple {
   }
 }
 
-class banana {
+class Banana {
   constructor(x, y){
     this.x = x;
     this.y = y;
   }
   
-  show(){
+  showBanana(){
     fill('yellow');
     ellipse(this.x, this.y, 50, 50);
   }
