@@ -3,6 +3,12 @@
 <html>
     <h1 id="title">Diven Math</h1>
     <img src = "https://i0.wp.com/konasnorkelandsail.com/wp-content/uploads/2023/11/ishan-seefromthesky-3rSr37wFxKQ-unsplash-1-scaled.jpg?resize=1080%2C607&ssl=1" alt = "Filler Image">
-    <h2>Our story</h2>
+    
+    <h2>Play our fun minigames!</h2>
+    
+    
+    <h4>Click here to view the lessons</h4>
+    
+    <h2 id = "story">Our story</h2>
     <p>Inspirational story here</p>
 </html>
